@@ -10,9 +10,13 @@ public class Journal
     }
     public void DisplayAll()
     {
+        Statistics stats = new Statistics();
+
         foreach (Entry entry in _entries)
         {
             entry.Display();
+            Console.WriteLine($"Word count: {stats.WordCount(entry)}");
+            Console.WriteLine();
         }
     }
 

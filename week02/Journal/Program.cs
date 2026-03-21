@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using System.Security.Cryptography.X509Certificates;
 
 class Program
@@ -7,6 +8,7 @@ class Program
     {
         Journal journal = new Journal();
         PromptGenerator promptGenerator = new PromptGenerator();
+        Statistics stats = new Statistics();
 
         int input = 0;
 
@@ -60,7 +62,8 @@ class Program
 
             else if (input == 5)
             {
-                //
+                Console.WriteLine($"Total Entries: {stats.EntryCount(journal)}");
+                Console.WriteLine($"Total word count: {stats.TotalWordCount(journal)}");
             }
         }
     }
