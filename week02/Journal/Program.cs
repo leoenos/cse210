@@ -16,8 +16,8 @@ class Program
             Console.WriteLine("Select one of the following options:");
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
-            Console.WriteLine("3. Load");
-            Console.WriteLine("4. Save");
+            Console.WriteLine("3. Save");
+            Console.WriteLine("4. Load");
             Console.WriteLine("5. Stats");
             Console.WriteLine("6. Quit");
             Console.Write("What would you like to do? ");
@@ -48,11 +48,14 @@ class Program
             {
                 Console.WriteLine("Filename: ");
                 string file = Console.ReadLine();
+                journal.StringToFile(file);
             }
 
             else if (input == 4)
             {
-                //
+                Console.Write("Filename: ");
+                string file = Console.ReadLine();
+                journal.LoadFromFile(file);
             }
 
             else if (input == 5)
