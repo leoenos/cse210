@@ -1,5 +1,10 @@
 using System;
 
+/*An extra class was added to exceed the project's requirements.
+The class called ScriptureLibrary handles the responsibility of creating/storing a list
+of scriptures and selecting one at random when the program is run. Scriptures could be added
+in the future.*/
+
 class Program
 {
     static void Main(string[] args)
