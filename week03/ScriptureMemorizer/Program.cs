@@ -18,6 +18,8 @@ class Program
             {
                 return;
             }
+
+            scripture.HideRandomWords(3);
         }
         
         Console.Clear();

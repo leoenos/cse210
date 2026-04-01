@@ -9,7 +9,11 @@ public class ScriptureLibrary
     {
         _scriptures = new List<(Reference, string)>();
 
-        _scriptures.Add((new Reference("Scripture", 1, 10), "."));
+        _scriptures.Add((new Reference("Scripture", 1, 10), ". . . . ..... ... .. ..."));
+
+        _scriptures.Add((new Reference("Scripture", 1, 10), ".. .. . . .... . .. ."));
+
+        _scriptures.Add((new Reference("Scripture", 1, 10), "... ... . . ... .. . "));
     }
 
     public Scripture GetRandomScripture()
