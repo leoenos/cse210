@@ -21,7 +21,7 @@ public class Scripture
 
     public void HideRandomWords(int numberToHide)
     {
-        List<Word> visible = _words.Where(word => !word.IsHidden()).ToList();
+        List<Word> visible = _words.Where(w => !w.IsHidden()).ToList();
 
         for (int i = 0; i < numberToHide && visible.Count > 0; i++)
         {
@@ -29,5 +29,30 @@ public class Scripture
             visible[index].Hide();
             visible.RemoveAt(index);
         }
+    }
+
+    public string GetDisplayText()
+    {
+        string display = _reference.GetDisplayText() + " ";
+
+        foreach(Word word in _words)
+        {
+            display += word.GetDisplayText() + " ";
+        }
+
+        return display;
+    }
+
+    public bool IsCompletelyHidden()
+    {
+        foreach (Word word in _words)
+        {
+            if (!word.IsHidden())
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
