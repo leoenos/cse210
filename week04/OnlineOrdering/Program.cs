@@ -20,14 +20,15 @@ class Program
         order2.AddProduct(new Product("Display Shelves", "ID004", 50, 4));
 
         Display(order1);
-        Console.WriteLine("_________________________");
+        Console.WriteLine("-------------------------------");
         Display(order2);
 
     static void Display(Order order)
         {
             Console.WriteLine($"Packing Label:\n{order.GetPackingLabel()}");
 
-            Console.WriteLine($"Shipping Label:\n{order.GetShippingLabel}");
+            Console.WriteLine("Shipping Label:");
+            Console.WriteLine(order.GetShippingLabel());
 
             Console.WriteLine($"Total: ${order.CalculateTotal():0.00}");
         }
