@@ -19,6 +19,37 @@ public class Order
     {
         double total = 0;
 
+        foreach (Product product in _products)
+        {
+            total += product.GetTotal();
+        }
+
+        if (_customer.LivesInUS())
+        {
+            total += 5;
+        }
+        else
+        {
+            total += 35;
+        }
+
         return total;
+    }
+
+    public string GetPackingLabel()
+    {
+        string label = "";
+
+        foreach (Product product in _products)
+        {
+            label += product.GetPackingInfo() + "\n";
+        }
+
+        return label;
+    }
+
+    public string GetShippingLabel()
+    {
+        return $"{_customer.GetName()}\n{_customer.GetAddress().GetFullAddress()}";
     }
 }
