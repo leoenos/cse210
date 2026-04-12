@@ -1,6 +1,6 @@
 using System.Drawing;
 
-public class Shape
+public abstract class Shape
 {
     private string _color;
 
@@ -19,5 +19,5 @@ public class Shape
         _color = color;
     }
 
-    //public abstract double GetArea();
+    public abstract double GetArea();
 }
