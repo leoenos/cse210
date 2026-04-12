@@ -5,9 +5,8 @@ public class Rectangle : Shape
 
     public Rectangle(string color, double length, double width) : base(color)
     {
-        string _color = color;
-        double _length = length;
-        double _width = width;
+        _length = length;
+        _width = width;
     }
 
     public override double GetArea()
