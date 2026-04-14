@@ -172,6 +172,37 @@ public class GoalManager
                 bool isComplete = bool.Parse(data[3]);
 
                 SimpleGoal goal = new SimpleGoal(name, description, points);
+
+                if (isComplete)
+                {
+                    goal.RecordEvent();
+                }
+                _goals.Add(goal);
+            }
+            else if (type == "Eternal Goal")
+            {
+                string name = data[0];
+                string description = data[1];
+                int points = int.Parse(data[2]);
+
+                _goals.Add(new EternalGoal(name, description, points));
+            }
+            else if (type == "ChecklistGoal")
+            {
+                string name = data[0];
+                string description = data[1];
+                int points = int.Parse(data[2]);
+                int completed = int.Parse(data[3]);
+                int target = int.Parse(data[4]);
+                int bonus = int.Parse(data[5]);
+
+                ChecklistGoal goal = new ChecklistGoal(name, description, points, target, bonus);
+
+                for (int j = 0; j < completed; j++)
+                {
+                    goal.RecordEvent();
+                }
+                _goals.Add(goal);
             }
         }
     }
