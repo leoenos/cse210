@@ -211,7 +211,7 @@ public class GoalManager
                 }
                 _goals.Add(goal);
 
-                Console.WriteLine("Loaded.");
+        Console.WriteLine("Loaded.");
             }
         }
     }
