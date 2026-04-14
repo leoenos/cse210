@@ -24,6 +24,6 @@ public class SimpleGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return $"Simple Goal:{_shortName},{_description},{_points},{_isComplete}";
+        return $"SimpleGoal:{_shortName},{_description},{_points},{_isComplete}";
     }
 }

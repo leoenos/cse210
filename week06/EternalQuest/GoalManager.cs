@@ -150,6 +150,13 @@ public class GoalManager
     {
         Console.Write("Enter filename: ");
         string filename = Console.ReadLine();
+
+        if (!File.Exists(filename))
+        {
+            Console.WriteLine("File not found");
+            return;
+        }
+
         string[] lines = File.ReadAllLines(filename);
 
         _goals.Clear();
@@ -164,7 +171,7 @@ public class GoalManager
             string type = parts[0];
             string[] data = parts[1].Split(",");
 
-            if (type == "Simple Goal")
+            if (type == "SimpleGoal")
             {
                 string name = data[0];
                 string description = data[1];
@@ -179,7 +186,7 @@ public class GoalManager
                 }
                 _goals.Add(goal);
             }
-            else if (type == "Eternal Goal")
+            else if (type == "EternalGoal")
             {
                 string name = data[0];
                 string description = data[1];
