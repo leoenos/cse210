@@ -210,6 +210,8 @@ public class GoalManager
                     goal.RecordEvent();
                 }
                 _goals.Add(goal);
+
+                Console.WriteLine("Loaded.");
             }
         }
     }
