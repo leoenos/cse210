@@ -16,6 +16,7 @@ public class ListingActivity : Activity
     {
         _name = "Listing";
         _description = "This activity lets you make a gratitude list of the positive things in your life";
+        _count = 0;
     }
 
     public void Run()
@@ -26,20 +27,19 @@ public class ListingActivity : Activity
         Console.WriteLine(prompt);
 
         Console.WriteLine("Start in");
-        ShowSpinner(5);
-
-        List<string> items = new List<string>();
+        ShowCountDown(5);
+        _count = 0;
 
         DateTime endTime = DateTime.Now.AddSeconds(_duration);
 
         while (DateTime.Now < endTime)
         {
             Console.Write("> ");
-            string input = Console.ReadLine();
-            items.Add(input);
+            Console.ReadLine();
+            _count++;
         }
 
-        Console.WriteLine($"You wrote {items.Count} things.");
+        Console.WriteLine($"You wrote {_count} things.");
 
         DisplayEndMessage();
     }

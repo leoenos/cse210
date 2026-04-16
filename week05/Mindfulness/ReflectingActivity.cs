@@ -33,8 +33,10 @@ public class ReflectingActivity : Activity
         DisplayStartingMessage();
 
         string prompt = GetRandomPrompt();
+        Console.WriteLine();
         Console.WriteLine(prompt);
-        Console.WriteLine("Take a second to reflect.");
+        Console.WriteLine();
+        Console.WriteLine("Take a second to reflect...");
         ShowSpinner(3);
 
         DateTime endTime = DateTime.Now.AddSeconds(_duration);
@@ -42,6 +44,7 @@ public class ReflectingActivity : Activity
         while (DateTime.Now < endTime)
         {
             string question = GetRandomQuestion();
+            Console.WriteLine();
             Console.WriteLine(question);
             ShowSpinner(4);
         }
